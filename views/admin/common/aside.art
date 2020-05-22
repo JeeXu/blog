@@ -1,0 +1,21 @@
+<!-- 侧边栏 -->
+<div class="aside fl">
+    <ul class="menu list-unstyled">
+        <li>
+            <a class="item {{currentLink == 'user' ? 'active' : ''}}" href="/admin/user">
+                <i class="fas fa-user"></i>
+                用户管理
+            </a>
+        </li>
+        <li>
+            <a class="item {{currentLink == 'article' ? 'active' : ''}}" href="/admin/article">
+                <i class="fas fa-list"></i>
+                文章管理
+            </a>
+        </li>
+    </ul>
+    <div class="cprt">
+        Powered by <a href="/" target="_blank">Jee</a>
+    </div>
+</div>
+<!-- 侧边栏 -->

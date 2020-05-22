@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/admin/css/login.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <form class="form-horizontal" action="/admin/login" method="POST" id="loginForm">
+                <span class="heading">用户登录</span>
+                <div class="form-group">
+                    <input type="email" name="email" class="form-control" id="inputEmail3" placeholder="请输入邮件地址">
+                    <i class="fa fa-user"></i>
+                </div>
+                <div class="form-group help">
+                    <input type="password" name="password" class="form-control" id="inputPassword3" placeholder="密　码">
+                    <i class="fa fa-lock"></i>
+                </div>
+                <div class="form-group">
+                    <!-- <div class="main-checkbox">
+                        <input type="checkbox" value="None" id="checkbox1" name="check" />
+                        <label for="checkbox1"></label>
+                    </div>
+                    <span class="text">Remember me</span> -->
+                    <button type="submit" class="btn btn-default">登录</button>
+                </div>
+                <p class=""></p>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.0/jquery.slim.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="/admin/js/common.js"></script>
+    <script>
+        // 为表单添加提交时间
+        $('#loginForm').submit(function () {
+            // 获取到表单中用户输入的内容
+            let result = serializeToJson($(this))
+            // 如果用户没有输入邮件地址
+            if (result.email.trim().length == 0) {
+                alert('请输入邮箱地址')
+                // 阻止程序向下执行
+                return false
+            }
+            // 如果用户没有输入密码
+            if (result.password.trim().length == 0) {
+                alert('请输入密码')
+                // 阻止程序向下执行
+                return false
+            }
+        });
+
+    </script>
+</body>
+
+</html>
